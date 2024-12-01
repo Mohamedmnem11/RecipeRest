@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Recipe</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.png">
+    <!-- lora Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- Kumbh Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css"/>
+    <!-- css -->
+    <link rel="stylesheet" href="css/homeStyle.css"/>
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <!-- loading -->
+    <div class="loading-slider">
+        <div class="loader"></div>
+    </div>
+    <!-- start nav -->
+    <div class="header ">
+        <nav class="navbar navbar-expand-lg fixed-top " id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo-white.png" alt="" class="img-fluid w-50">
+                </a>
+                <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-4 ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="index.html">HOME</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">Recipes</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white " href="chiefs.html">CHIEFS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">PAGES</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="recipe-details.html">Recipe Details</a></li>
+                                <li><a class="dropdown-item" href="recipesByCategory.html">Category Recipes</a></li>
+                                <li><a class="dropdown-item" href="recipesByArea.html">Area Recipes</a></li>
+                                <li><a class="dropdown-item" href="searchRecipeByIngredient.html">Ingredient Recipes</a></li>
+                                <li><a class="dropdown-item" href="login&signup.html">Login & signUp</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="contactUs.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end nav -->
+
+    <!-- start landing -->
+    <div class="landing">
+        <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
+            <div class="carousel-indicators">
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" id="carouselContent">
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- end landing -->
+    <!--start recipe types  -->
+<section class="recipe-types mt-4">
+    <div class="container">
+        <div class="special-heading">
+            <div class="title">Browse Through Our Most Popular Recipes</div>
+            <h2 class="widgettitle">Browse by Recipe Type</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="">
+            </div>
+        </div>
+        <div class="row mt-3 g-2" id="recipes-types">
+            <!-- <div class="col-sm-6 col-lg-4">
+                <a class="ct-category" href="">
+                    <div class="ct-category-icon">
+                        <img src="https://www.themealdb.com/images/category/goat.png" alt="" class="img-fluid img-thumbnail hover-zoom">
+                        <h5 class="small fw-bold my-4 text-balck">Recipe NAme</h5>
+                        <span class="bg-white">Recipe Count</span>
+                    </div>
+                </a>
+            </div> -->
+            
+        </div>
+    </div>
+</section>
+    <!--End recipe types  -->
+
+    <!--start recipe list  -->
+<section class="recipes-list mt-5">
+    <div class="container">
+        <div class="special-heading">
+            <div class="title">Browse Through Our Most Popular Recipes</div>
+            <h2 class="widgettitle">Most Popular Recipes</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="">
+            </div>
+        </div>
+        <div class="recipes-list-content">
+            <div class="row mt-3 g-3" id="recipes-list-content">
+                <!-- <div class="col-sm-6 col-md-3 " > -->
+                    <!-- <div class="card ">
+                        <div class="bg-image hover-overlay position-relative" data-mdb-ripple-init data-mdb-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
+                            <a href="#!" class="btn btn-primary view-Recipe" data-mdb-ripple-init>Button</a>
+                        </div>
+                        <div class="p-1" style="background-color: #ff9638;">
+                            <small class="text-white">Last updated 3 mins ago</small>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                                <ul class="post-meta list-unstyled">
+                                    <li>
+                                        <i class="fa-solid fa-earth-americas fs-5" style="color: #ff9638;"></i>
+                                        A Taste of
+                                        <p class="m-0">${carouselItemData[i].strArea}</p>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-utensils fs-5" style="color: #ff9638;"></i>
+                                        Delights of
+                                        <p class="m-0">${carouselItemData[i].strCategory}</p>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+    <!--End recipe types  -->
+<!-- start client Testimonials -->
+<section class="testimonials py-4 mt-4">
+    <div class="container">
+        <div class="special-heading">
+            <div class="title">We had to share this amazing Recipe Testimonial from our users</div>
+            <h2 class="widgettitle">Client Testimonials</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="">
+            </div>
+        </div>
+        <div class=" swiper ">
+            <div class="slider-wrapper ">
+                <div class="card-list swiper-wrapper  py-3 " id="card-list" >
+                    <!-- <div class="card-item swiper-slide rounded-4 p-3  position-relative ">
+                        <div class="d-flex gap-3">
+                            <div class="image-test img-fluid">
+                                <img src="imgs/person-1.jpg" alt="">
+                            </div>
+                            <div>
+                                <div class="small">I just wanted to say thank you for your delicious recipes . my husband and i
+                                    have been
+                                    thoroughly
+                                    enjoying the...</div>
+                                <div class="client-info">
+                                    <h6>Eric Filler</h6>
+                                    <small>Example lnc</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i class="fa-solid fa-quote-right"></i>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End client Testimonials -->
+<!--start Recommended Recipes -->
+<section class="recommended mt-4">
+    <div class="container">
+        <div class="special-heading">
+            <div class="title">Explore this collection of our all-time best dinner recipes</div>
+            <h2 class="widgettitle">Recommended Recipes</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="">
+            </div>
+        </div>
+        <div class="row g-4 mt-3" id="recommended-recipes">
+            <!-- <div class="recommended-item col-sm-6 col-md-4 col-lg-3">
+                <div class="image-recommend bg-image hover-zoom position-relative ">
+                    <img src="imgs/recipe-5.jpg" class="w-100" />
+                    <div class="inner-box d-flex justify-content-center align-items-center">
+                        <div class="links p-4">
+                            <a href="#" class="">link tupe</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!--end Recommended Recipes -->
+<!-- start recipe by ingredient -->
+<section class="recipesByIngredient mt-4 p-5" style="background-color: #f4f1ea80;">
+    <div class="container">
+        <div class="special-heading">
+            <div class="title">Recipes organized by primary and important ingredients, like oils, flours and herbs.</div>
+            <h2 class="widgettitle">Recipes by Ingredients</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row g-4 mt-3">
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a  href="searchRecipeByIngredient.html?ingredient=Beef">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/meat.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Beaf</h6>
+                        <span>(20 recipes)</span>
+                    </div>
+                </a>
+            </div>
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a href="searchRecipeByIngredient.html?ingredient=Chicken">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/chicken-meat.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Chicken</h6>
+                        <span>(11 recipes)</span>
+                    </div>
+                </a>
+            </div>
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a  href="searchRecipeByIngredient.html?ingredient=egg">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/eggs.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Egg</h6>
+                        <span>(23 recipes)</span>
+                    </div>
+                </a>
+            </div>
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a href="searchRecipeByIngredient.html?ingredient=white fish">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/fish.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Fish and Seafood</h6>
+                        <span>(1 recipes)</span>
+                    </div>
+                </a>
+            </div>
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a href="searchRecipeByIngredient.html?ingredient=Avocado">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/fruits.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Fruits</h6>
+                        <span>(2 recipes)</span>
+                    </div>
+                </a>
+            </div>          
+            <div class=" ingredient text-center col-sm-6 col-md-4  col-xl-2">
+                <a href="searchRecipeByIngredient.html?ingredient=rice">
+                    <div class="imgcon  bg-white rounded-circle d-flex justify-content-center align-items-center">
+                        <img src="imgs/rice.png" alt="" class="img-fluid w-75 ">
+                    </div>
+                    <div class=" mt-2">
+                        <h6>Rice</h6>
+                        <span>(11 recipes)</span>
+                    </div>
+                </a>
+            </div>          
+        </div>
+    </div>
+</section>
+<!-- End recipe by ingredient -->
+<!-- searching by name -->
+ <section class="searchingByArea my-5" >
+    <div class="container position-relative text-white">
+        <div class="special-heading mb-2">
+            <div class="title">explore local dishes using our professional area-based search</div>
+            <h2 class="widgettitle text-white">Areas Recipes</h2>
+            <div class="separate">
+                <img src="imgs/separate.png" alt="">
+            </div>
+        </div>
+        <p class="text-center fs-3">You can discover <a href="recipesByArea.html" class="link-underline-danger fs-4">From here</a> </p>
+        <p class="text-center">Search for your country's best recipes with precision—
+        tool.</p>
+    </div>
+ </section>
+<!-- end searching by name -->
+<!--start chiefs -->
+<section class=" chiefs mt-4">
+<div class="container">
+    <div class="special-heading">
+        <div class="title">Get access to thousands of recipes from famous chefs.</div>
+        <h2 class="widgettitle">Our Chefs & Writers</h2>
+        <div class="separate">
+            <img src="imgs/separate.png" alt="">
+        </div>
+    </div>
+    <div class="row g-4 mt-3" id="chiefs">
+        <!-- <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card">
+                <div class="bg-image position-relative">
+                    <img src="imgs/person-1.jpg" class="img-fluid rounded-top-4" alt="...">
+                    <a  href="#!" class="btn btn-primary chief-recipes" >Recipes</a>
+                </div>
+                <div class="p-2 number-recipes" style="background-color: #ff9638;">
+                    <i class="fa-sharp fa-solid fa-spoon fs-5 me-2"></i>
+                    <span>${arrChef[i].num_Recipe}</span>
+                </div>
+                <ul class="card-body p-2 mb-0 list-unstyled">
+                    <li class="card-title mb-2 fs-5">${arrChef[i].name}</li>
+                    <li class="card-text mb-2"> ${arrChef[i].national}</li>
+                    <li class="paragraph-card mb-2"><i class="fa-solid fa-envelope me-2"></i> info@example.com</li>
+                    <li class="paragraph-card mb-2"><i class="fa-solid fa-globe me-2"></i> www.example.com</li>
+                    <li class="text-muted mb-2"> <i class="fa-solid fa-phone me-2"></i> 123 456 7890 </li>
+                </ul>
+                <div class=" row px-4 py-1 card-footer ">
+                    <a href="#" class="card-link col"><i class="fa-brands fa-facebook " style="color: gray;"></i></a>
+                    <a href="#" class="card-link col"><i class="fa-brands fa-twitter" style="color: gray;"></i> </a>
+                    <a href="#" class="card-link col"> <i class="fa-brands fa-linkedin" style="color: gray;"></i> </a>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+</section>
+<!--end chiefs -->
+
+
+
+
+    <!-- Footer -->
+    <footer class=" mt-4"> <!--bg-body-tertiary-->
+    <div class="container">
+        <div class="row g-3">
+            <div class=" col col-md-6 col-lg-3 ">
+                <h5 class="">About Us</h5>
+                    <div class="AboutUs-content small text-white mb-3"> Browse our extensive collection of recipes that includes
+                        thousands of recipes for cookies, cakes, breads, rolls and main dishes.</div>
+                    <div class="mb-2"><i class="fa-solid fa-location-dot text-white me-2"></i><small>498 Park Presidio Blvd, San Francisco</small></div>
+                    <div class="mb-2"> <i class="fa-regular fa-envelope text-white me-2"></i><small>info@example.com</small></div>
+                    <div class="mb-2"><i class="fa-solid fa-phone text-white me-2"></i><small>+123 456 679 123</small></div>
+            </div>   
+            <div class="Quick-Links col col-md-6 col-lg-2 ">
+                <h5 class="">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2 small"><a href="#!">About Us</a> </li>
+                    <li class="mb-2 small"><a href="#!">Submit Your Recipe</a></li>
+                    <li class="mb-2 small"> <a href="#!">Privacy Policy</a></li>
+                    <li class="mb-2 small"><a href="#!">Terms & Conditions</a></li>
+                    <li class="mb-2 small"><a href="#!">Submit Your Recipes</a></li>
+                </ul>
+            </div>
+            <div class=" d-sm-none d-md-block col-md-6  d-lg-none"></div>
+                    <!-- Grid column 3 -->
+            <div class="Courses col-sm-12 col-md-6 col-lg-2 ">
+                <h5 class="">Courses</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2 small"><a href="#!">Appetizers</a></li>
+                    <li class="mb-2 small"><a href="#!">Breads & Rolls</a></li>
+                    <li class="mb-2 small"><a href="#!">Condiments</a></li>
+                    <li class="mb-2 small"><a href="#!">Desserts</a></li>
+                    <li class="mb-2 small"><a href="#!">Dinners</a></li>
+                </ul>
+            </div>
+            <div class="footer-recent-recipe col col-md-6 col-lg-3">
+                <h5 class="">Recent Recipes</h5>
+                <div class="d-flex gap-3 align-items-center">
+                    <div><img src="imgs/recipe-2.jpg" alt="" class="img-fluid"></div>
+                    <div>
+                        <a href="" class="d-block small">Black Bean Sweet Potato Bowl</a>
+                        <i class="far fa-calendar me-2"></i><small>April 10, 2022</small>
+                    </div>
+                </div>
+                <hr style="width: 90%;">
+                <div class="d-flex gap-3 align-items-center">
+                    <div><img src="imgs/recipe-3.jpg" alt="" class="img-fluid"></div>
+                    <div>
+                        <a href="" class="d-block small">How to add fibre to...</a>
+                        <i class="far fa-calendar me-2 "></i><small>April 15, 2022</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6 col-lg-2">
+                <h5 class="">Social Links</h5>
+                <ul class="social-icons list-unstyled d-flex gap-3 align-items-center">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+    </footer>
+    <!-- Footer -->
+<!-- Linking SwiperJS script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="js/mdb.umd.min.js"></script>
+<script  src="js/home.js"></script>
+</body>
+
+</html>

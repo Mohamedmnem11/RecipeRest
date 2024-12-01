@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Recipe</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- Kumbh Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/homeStyle.css" />
+    <!-- sweetalert2  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        /* navber */
+        .nav-link{
+    position: relative;
+}
+.nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: 0.5s ease;
+}
+.nav-link:hover {
+    transition-delay: 0.5s;
+}
+
+/* .nav-link:hover::before {
+    width: 100%;
+} */
+.nav-link:focus::before,
+.link-checked::before,
+.nav-link:hover::before{
+    width: 100%;
+}
+/* end navbar */
+        .landing-comm {
+        background-image: url(imgs/landingcomm.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    } 
+    .landing-comm::before{
+        position: absolute;
+        content: "";
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.44);
+        width: 100%;
+        height: 100%;
+    } 
+   .breadcrumb{
+    width: fit-content;
+    margin: auto;
+    color :black !important;
+    padding: 5px;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, .30) !important;
+   }
+     .active  a{
+    color: #ff9638 !important;
+   }
+    </style>
+</head>
+<body>
+    <!-- start nav -->
+    <div class="header ">
+        <nav class="navbar navbar-expand-lg fixed-top " id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo-white.png" alt="" class="img-fluid w-50">
+                </a>
+                <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-4 ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="index.html">HOME</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                                <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                    id="navbarDropdownMenuLink" role="button" aria-expanded="false">Recipes</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white " href="chiefs.html">CHIEFS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">PAGES</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="recipe-details.html">Recipe Details</a></li>
+                                <li><a class="dropdown-item" href="recipesByCategory.html">Category Recipes</a></li>
+                                <li><a class="dropdown-item" href="recipesByArea.html">Area Recipes</a></li>
+                                <li><a class="dropdown-item" href="searchRecipeByIngredient.html">Ingredient Recipes</a></li>
+                                <li><a class="dropdown-item" href="login&signup.html">Login & signUp</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="contactUs.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end nav -->
+        <!-- start landing -->
+        <div class="landing-comm p-5">
+            <div class="container p-3">
+                <div class="landing-text p-5 m-auto text-center text-white position-relative">
+                    <h2>Chefs</h2>
+                    <ol class="breadcrumb text-white">
+                        <li class="breadcrumb-item "><a href="index.html" class="text-black">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Chefs</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- end landing -->
+    
+    
+    <!--start chiefs -->
+    <section class=" chiefs mt-4">
+        <div class="container">
+            <div class="special-heading">
+                <div class="title">Get access to thousands of recipes from famous chefs.</div>
+                <h2 class="widgettitle">Our Chefs & Writers</h2>
+                <div class="separate">
+                    <img src="imgs/separate.png" alt="">
+                </div>
+            </div>
+            <div class="row g-4 mt-3" id="chiefs">
+                <!-- <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <div class="bg-image position-relative">
+                        <img src="imgs/person-1.jpg" class="img-fluid rounded-top-4" alt="...">
+                        <a  href="#!" class="btn btn-primary chief-recipes" >Recipes</a>
+                    </div>
+                    <div class="p-2 number-recipes" style="background-color: #ff9638;">
+                        <i class="fa-sharp fa-solid fa-spoon fs-5 me-2"></i>
+                        <span>${arrChef[i].num_Recipe}</span>
+                    </div>
+                    <ul class="card-body p-2 mb-0 list-unstyled">
+                        <li class="card-title mb-2 fs-5">${arrChef[i].name}</li>
+                        <li class="card-text mb-2"> ${arrChef[i].national}</li>
+                        <li class="paragraph-card mb-2"><i class="fa-solid fa-envelope me-2"></i> info@example.com</li>
+                        <li class="paragraph-card mb-2"><i class="fa-solid fa-globe me-2"></i> www.example.com</li>
+                        <li class="text-muted mb-2"> <i class="fa-solid fa-phone me-2"></i> 123 456 7890 </li>
+                    </ul>
+                    <div class=" row px-4 py-1 card-footer ">
+                        <a href="#" class="card-link col"><i class="fa-brands fa-facebook " style="color: gray;"></i></a>
+                        <a href="#" class="card-link col"><i class="fa-brands fa-twitter" style="color: gray;"></i> </a>
+                        <a href="#" class="card-link col"> <i class="fa-brands fa-linkedin" style="color: gray;"></i> </a>
+                    </div>
+                </div>
+            </div> -->
+    
+            </div>
+        </div>
+    </section>
+    <!--end chiefs -->
+<!-- start adding recipe form -->
+<section >
+<!-- form CRUD -->
+<div class="container mt-5 rounded-4 " style="background-color: #f7f7f7;">
+    <div class="p-4" >
+        <h1 class="text-center mb-4">Share Your Recipe</h1>
+            <form id="recipeForm">
+                <!-- Recipe Name and Dish Type -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-6">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="text" id="recipeName" class="form-control" />
+                            <label class="form-label" for="recipeName">Recipe Name</label>
+                        </div>
+                        <small id="recipeNameError" class="text-danger"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <select data-mdb-select-init class="form-select form-control select" id="dishType">
+                            <option value="Bakery">Bakery</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Cheese">Cheese</option>
+                            <option value="Chicken">Chicken</option>
+                            <option value="Cookie">Cookie</option>
+                            <option value="Pizzas">Pizzas</option>
+                            <option value="Salad">Salad</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <!-- Preparation Time, Servings, and Cooking Time -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-4">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="number" id="prepTime" class="form-control" />
+                            <label class="form-label" for="prepTime">Preparation Time (mins)</label>
+                        </div>
+                        <small id="prepTimeError" class="text-danger"></small>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="number" id="servings" class="form-control" />
+                            <label class="form-label" for="servings">No. of Servings</label>
+                        </div>
+                        <small id="servingsError" class="text-danger"></small>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="number" id="cookTime" class="form-control" />
+                            <label class="form-label" for="cookTime">Cooking Time (mins)</label>
+                        </div>
+                        <small id="cookTimeError" class="text-danger"></small>
+                    </div>
+                </div>
+            
+                <!-- Shelf Life, Difficulty, and Image -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-4">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="number" id="shelfLife" class="form-control" />
+                            <label class="form-label" for="shelfLife">Shelf Life (Days)</label>
+                        </div>
+                        <small id="shelfLifeError" class="text-danger"></small>
+                    </div>
+                    <div class="col-md-4">
+                        <select data-mdb-select-init class="form-select form-control select" id="difficulty">
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                            <option value="Professional">Professional</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="file" id="image" class="form-control" accept="image/*" />
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Ingredients and Directions -->
+                <div class="form-outline  mb-3" data-mdb-input-init>
+                    <textarea id="ingredients" class="form-control" rows="3"></textarea>
+                    <label class="form-label" for="ingredients">Ingredients</label>
+                </div>
+                <small id="ingredientsError" class="text-danger"></small>
+                <div class="form-outline  mb-3" data-mdb-input-init>
+                    <textarea id="directions" class="form-control" rows="3"></textarea>
+                    <label class="form-label" for="directions">Directions</label>
+                </div>
+                <small id="directionsError" class="text-danger"></small>
+            
+                <!-- Name and Email -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-6">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="text" id="name" class="form-control" />
+                            <label class="form-label" for="yourName">Your Name</label>
+                        </div>
+                        <small id="nameError" class="text-danger"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="email" id="email" class="form-control" />
+                            <label class="form-label" for="yourEmail">Your E-mail</label>
+                        </div>
+                        <small id="emailError" class="text-danger"></small>
+                    </div>
+                </div>
+            </form>
+        <!-- Buttons -->
+        <button id="submit" class="btn btn-primary btn-block mb-3" style="background-color: #ff9638;">Add Recipe</button>
+        <button type="button" class="btn btn-warning btn-block mb-3" id="deleteAll" style="display : none;">Delete
+            AllRecipes</button>
+        
+        <!-- Recipe List -->
+        <h2 class="text-center mb-6">Recipe List</h2>
+        <ul class="list-group" id="recipeList">
+        
+        </ul>
+        <div class="row gy-5" id="create_curds">
+        </div>
+    </div>
+    <!-- end Form CRUD -->
+</section>
+<!-- end adding recipe form -->
+        <!-- Footer -->
+        <footer class=" mt-4">
+            <div class="container">
+                <div class="row g-3">
+                    <div class=" col col-md-6 col-lg-3 ">
+                        <h5 class="">About Us</h5>
+                        <div class="AboutUs-content small text-white mb-3"> Browse our extensive collection of recipes that
+                            includes
+                            thousands of recipes for cookies, cakes, breads, rolls and main dishes.</div>
+                        <div class="mb-2"><i class="fa-solid fa-location-dot text-white me-2"></i><small>498 Park Presidio
+                                Blvd,
+                                San Francisco</small></div>
+                        <div class="mb-2"> <i
+                                class="fa-regular fa-envelope text-white me-2"></i><small>info@example.com</small>
+                        </div>
+                        <div class="mb-2"><i class="fa-solid fa-phone text-white me-2"></i><small>+123 456 679 123</small>
+                        </div>
+                    </div>
+                    <div class="Quick-Links col col-md-6 col-lg-2 ">
+                        <h5 class="">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 small"><a href="#!">About Us</a> </li>
+                            <li class="mb-2 small"><a href="#!">Submit Your Recipe</a></li>
+                            <li class="mb-2 small"> <a href="#!">Privacy Policy</a></li>
+                            <li class="mb-2 small"><a href="#!">Terms & Conditions</a></li>
+                            <li class="mb-2 small"><a href="#!">Submit Your Recipes</a></li>
+                        </ul>
+                    </div>
+                    <div class=" d-sm-none d-md-block col-md-6  d-lg-none"></div>
+                    <!-- Grid column 3 -->
+                    <div class="Courses col-sm-12 col-md-6 col-lg-2 ">
+                        <h5 class="">Courses</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 small"><a href="#!">Appetizers</a></li>
+                            <li class="mb-2 small"><a href="#!">Breads & Rolls</a></li>
+                            <li class="mb-2 small"><a href="#!">Condiments</a></li>
+                            <li class="mb-2 small"><a href="#!">Desserts</a></li>
+                            <li class="mb-2 small"><a href="#!">Dinners</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-recent-recipe col col-md-6 col-lg-3">
+                        <h5 class="">Recent Recipes</h5>
+                        <div class="d-flex gap-3 align-items-center">
+                            <div><img src="imgs/recipe-2.jpg" alt="" class="img-fluid"></div>
+                            <div>
+                                <a href="" class="d-block small">Black Bean Sweet Potato Bowl</a>
+                                <i class="far fa-calendar me-2"></i><small>April 10, 2022</small>
+                            </div>
+                        </div>
+                        <hr style="width: 90%;">
+                        <div class="d-flex gap-3 align-items-center">
+                            <div><img src="imgs/recipe-3.jpg" alt="" class="img-fluid"></div>
+                            <div>
+                                <a href="" class="d-block small">How to add fibre to...</a>
+                                <i class="far fa-calendar me-2 "></i><small>April 15, 2022</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 col-lg-2">
+                        <h5 class="">Social Links</h5>
+                        <ul class="social-icons list-unstyled d-flex gap-3 align-items-center">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <script src="js/chief.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const recipeForm = document.getElementById('recipeForm');
+        const submitButton = document.getElementById('submit');
+
+        // Real-time validation functions
+        const showError = (elementId, message) => {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.classList.remove('text-success'); // Remove success class on error
+            element.classList.add('text-danger'); // Add danger class for errors
+        };
+
+        const showSuccess = (elementId, message) => {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.classList.remove('text-danger'); // Remove danger class on success
+            element.classList.add('text-success'); // Add success class for valid input
+        };
+
+        const clearError = (elementId) => {
+            const element = document.getElementById(elementId);
+            element.textContent = '';
+            element.classList.remove('text-danger', 'text-success'); // Clear both classes
+        };
+
+        // Input validation
+        const inputsToValidate = ['recipeName', 'prepTime', 'servings', 'cookTime', 'shelfLife', 'ingredients', 'directions', 'name', 'email'];
+
+        // Function to check if all inputs are valid
+        function checkFormValidity() {
+            let isValid = true;
+
+            inputsToValidate.forEach((inputId) => {
+                const inputElement = document.getElementById(inputId);
+                const errorElementId = inputId + 'Error';
+
+                if (!inputElement.value || document.getElementById(errorElementId).classList.contains('text-danger')) {
+                    isValid = false;
+                }
+            });
+
+            // Enable or disable submit button based on validity
+            submitButton.disabled = !isValid;
+        }
+
+        document.getElementById('recipeName').addEventListener('input', function () {
+            const value = this.value.trim();
+            if (value.length < 3) {
+                showError('recipeNameError', 'Recipe name must be at least 3 characters long.');
+            } else {
+                clearError('recipeNameError');
+                showSuccess('recipeNameError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('prepTime').addEventListener('input', function () {
+            const value = this.value;
+            if (value <= 0) {
+                showError('prepTimeError', 'Preparation time must be a positive number.');
+            } else {
+                clearError('prepTimeError');
+                showSuccess('prepTimeError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('servings').addEventListener('input', function () {
+            const value = this.value;
+            if (value <= 0) {
+                showError('servingsError', 'Number of servings must be a positive number.');
+            } else {
+                clearError('servingsError');
+                showSuccess('servingsError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('cookTime').addEventListener('input', function () {
+            const value = this.value;
+            if (value <= 0) {
+                showError('cookTimeError', 'Cooking time must be a positive number.');
+            } else {
+                clearError('cookTimeError');
+                showSuccess('cookTimeError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('shelfLife').addEventListener('input', function () {
+            const value = this.value;
+            if (value < 0) {
+                showError('shelfLifeError', 'Shelf life cannot be negative.');
+            } else {
+                clearError('shelfLifeError');
+                showSuccess('shelfLifeError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('ingredients').addEventListener('input', function () {
+            const value = this.value.trim();
+            if (value.length < 5) {
+                showError('ingredientsError', 'Ingredients must be at least 5 characters long.');
+            } else {
+                clearError('ingredientsError');
+                showSuccess('ingredientsError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('directions').addEventListener('input', function () {
+            const value = this.value.trim();
+            if (value.length < 5) {
+                showError('directionsError', 'Directions must be at least 5 characters long.');
+            } else {
+                clearError('directionsError');
+                showSuccess('directionsError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('name').addEventListener('input', function () {
+            const value = this.value.trim();
+            if (value.length < 3) {
+                showError('nameError', 'Your name must be at least 3 characters long.');
+            } else {
+                clearError('nameError');
+                showSuccess('nameError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        document.getElementById('email').addEventListener('input', function () {
+            const value = this.value.trim();
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(value)) {
+                showError('emailError', 'Invalid email format.');
+            } else {
+                clearError('emailError');
+                showSuccess('emailError', 'Looks good!');
+            }
+            checkFormValidity();
+        });
+
+        // Add Recipe to Local Storage
+        document.getElementById('submit').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const recipe = {
+                recipeName: document.getElementById('recipeName').value,
+                dishType: document.getElementById('dishType').value,
+                prepTime: document.getElementById('prepTime').value,
+                servings: document.getElementById('servings').value,
+                cookTime: document.getElementById('cookTime').value,
+                shelfLife: document.getElementById('shelfLife').value,
+                difficulty: document.getElementById('difficulty').value,
+                ingredients: document.getElementById('ingredients').value,
+                directions: document.getElementById('directions').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+            };
+
+            if (validateRecipe(recipe)) {
+                let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+                recipes.push(recipe);
+                localStorage.setItem('recipes', JSON.stringify(recipes));
+                // alert('Recipe added successfully!');
+                 Swal.fire({
+                    title: 'Error!',
+                    text: 'Please fill in all fields correctly.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            } else {
+                // alert('Please fill in all fields correctly.');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Recipe added successfully!'",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            }
+        });
+
+        // Validate the entire recipe object
+        function validateRecipe(recipe) {
+            return recipe.recipeName.length >= 3 &&
+                recipe.prepTime > 0 &&
+                recipe.servings > 0 &&
+                recipe.cookTime > 0 &&
+                recipe.shelfLife >= 0 &&
+                /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(recipe.email) &&
+                recipe.ingredients.length >= 5 &&
+                recipe.directions.length >= 5 &&
+                recipe.name.length >= 3;
+        }
+    });
+
+    </script>
+    </body>
+ 
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Recipe</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- Kumbh Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/homeStyle.css" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- sweetalert2  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<style>
+    /* navbar */
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: white;
+        transition: 0.5s ease;
+    }
+
+    .nav-link:hover {
+        transition-delay: 0.5s;
+    }
+
+    /* .nav-link:hover::before {
+    width: 100%;
+} */
+    .nav-link:focus::before,
+    .link-checked::before,
+    .nav-link:hover::before {
+        width: 100%;
+    }
+
+    /* end navbar */
+    .landing-comm {
+        background-image: url(imgs/landingcomm.jpg);
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+
+    .landing-comm::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        width: 100%;
+        height: 100%;
+    }
+
+    .breadcrumb {
+        width: fit-content;
+        margin: auto;
+        color: black !important;
+        padding: 5px;
+        border-radius: 1px;
+        background-color: rgba(255, 255, 255, .30) !important;
+    }
+
+    .active a {
+        color: #ff9638 !important;
+    }
+
+    .info .card .card-body i {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ff9638;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        box-shadow: 2px 2px 2px rgb(199, 198, 198);
+    }
+
+    .info .card {
+        background-color: #f4f1ea80;
+        height: 100%;
+    }
+</style>
+
+<body>
+
+
+    <!-- start nav -->
+    <div class="header ">
+        <nav class="navbar navbar-expand-lg fixed-top " id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo-white.png" alt="" class="img-fluid w-50">
+                </a>
+                <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-4 ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="index.html">HOME</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                                <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                    id="navbarDropdownMenuLink" role="button" aria-expanded="false">Recipes</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white " href="chiefs.html">CHIEFS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle text-white" href="#"
+                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">PAGES</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="recipe-details.html">Recipe Details</a></li>
+                                <li><a class="dropdown-item" href="recipesByCategory.html">Category Recipes</a></li>
+                                <li><a class="dropdown-item" href="recipesByArea.html">Area Recipes</a></li>
+                                <li><a class="dropdown-item" href="searchRecipeByIngredient.html">Ingredient Recipes</a>
+                                </li>
+                                <li><a class="dropdown-item" href="login&signup.html">Login & signUp</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="contactUs.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end nav -->
+    <!-- start landing -->
+    <div class="landing-comm p-5">
+        <div class="container p-3">
+            <div class="landing-text p-5 m-auto text-center text-white position-relative">
+                <h2>ContactUS</h2>
+                <ol class="breadcrumb text-white">
+                    <li class="breadcrumb-item "><a href="index.html" class="text-black">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="#">ContactUs</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end landing -->
+    <!-- info section -->
+    <div class="info mt-4">
+        <div class="container">
+            <div class="row g-3 ">
+                <!-- Card 1: Our Address -->
+                <div class=" col-md-6 col-lg-4 ">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-home fs-4 mb-3"></i>
+                            <h6 class="card-title" style="color: #ff9638;">Our Address</h6>
+                            <p class="card-text">400-498 Park Presidio Blvd, San Francisco, CA 94118, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Phone & Email -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-phone-alt fs-4 mb-3"></i>
+                            <h6 class="card-title" style="color: #ff9638;">Phone & Email</h6>
+                            <p class="card-text">+90 (456) 123-78 90 <br> info@companyname.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Message -->
+                <div class=" col-md-6 col-lg-4">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fs-4 mb-3"></i>
+                            <h5 class="card-title" style="color: #ff9638;">Message</h5>
+                            <p class="card-text">contact@companyname.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end info section -->
+    <!-- Contact Form with Gray Background -->
+    <div class=" mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card shadow-sm" style="background-color: #f7f7f7; border: none;">
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <!-- Name Input -->
+                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="form-outline" data-mdb-input-init>
+                                            <input type="text" id="name" class="form-control bg-white" />
+                                            <label class="form-label" for="name">Name</label>
+                                        </div>
+                                        <small id="nameError" class="text-danger"></small>
+                                    </div>
+                            
+                                    <!-- Email Input -->
+                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="form-outline" data-mdb-input-init>
+                                            <input type="email" id="email" class="form-control bg-white" />
+                                            <label class="form-label" for="email">Email</label>
+                                        </div>
+                                        <small id="emailError" class="text-danger"></small>
+                                    </div>
+                            
+                                    <!-- Subject Input -->
+                                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="form-outline" data-mdb-input-init>
+                                            <input type="text" id="subject" class="form-control bg-white" />
+                                            <label class="form-label" for="subject">Subject</label>
+                                        </div>
+                                        <small id="subjectError" class="text-danger"></small>
+                                    </div>
+                                </div>
+                            
+                                <!-- Message Field -->
+                                <div class="form-outline mb-4" data-mdb-input-init>
+                                    <textarea class="form-control form-control-lg bg-white" id="message" rows="10"></textarea>
+                                    <label class="form-label" for="message">Message</label>
+                                </div>
+                                <small id="messageError" class="text-danger"></small>
+                            
+                                <!-- Send Button -->
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" id="send" class="btn btn-sm"
+                                        style="background-color: #ff9638; color: white;">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class=" mt-4">
+            <div class="container">
+                <div class="row g-3">
+                    <div class=" col col-md-6 col-lg-3 ">
+                        <h5 class="">About Us</h5>
+                        <div class="AboutUs-content small text-white mb-3"> Browse our extensive collection of recipes
+                            that
+                            includes
+                            thousands of recipes for cookies, cakes, breads, rolls and main dishes.</div>
+                        <div class="mb-2"><i class="fa-solid fa-location-dot text-white me-2"></i><small>498 Park
+                                Presidio Blvd,
+                                San Francisco</small></div>
+                        <div class="mb-2"> <i
+                                class="fa-regular fa-envelope text-white me-2"></i><small>info@example.com</small>
+                        </div>
+                        <div class="mb-2"><i class="fa-solid fa-phone text-white me-2"></i><small>+123 456 679
+                                123</small></div>
+                    </div>
+                    <div class="Quick-Links col col-md-6 col-lg-2 ">
+                        <h5 class="">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 small"><a href="#!">About Us</a> </li>
+                            <li class="mb-2 small"><a href="#!">Submit Your Recipe</a></li>
+                            <li class="mb-2 small"> <a href="#!">Privacy Policy</a></li>
+                            <li class="mb-2 small"><a href="#!">Terms & Conditions</a></li>
+                            <li class="mb-2 small"><a href="#!">Submit Your Recipes</a></li>
+                        </ul>
+                    </div>
+                    <div class=" d-sm-none d-md-block col-md-6  d-lg-none"></div>
+                    <!-- Grid column 3 -->
+                    <div class="Courses col-sm-12 col-md-6 col-lg-2 ">
+                        <h5 class="">Courses</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 small"><a href="#!">Appetizers</a></li>
+                            <li class="mb-2 small"><a href="#!">Breads & Rolls</a></li>
+                            <li class="mb-2 small"><a href="#!">Condiments</a></li>
+                            <li class="mb-2 small"><a href="#!">Desserts</a></li>
+                            <li class="mb-2 small"><a href="#!">Dinners</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-recent-recipe col col-md-6 col-lg-3">
+                        <h5 class="">Recent Recipes</h5>
+                        <div class="d-flex gap-3 align-items-center">
+                            <div><img src="imgs/recipe-2.jpg" alt="" class="img-fluid"></div>
+                            <div>
+                                <a href="" class="d-block small">Black Bean Sweet Potato Bowl</a>
+                                <i class="far fa-calendar me-2"></i><small>April 10, 2022</small>
+                            </div>
+                        </div>
+                        <hr style="width: 90%;">
+                        <div class="d-flex gap-3 align-items-center">
+                            <div><img src="imgs/recipe-3.jpg" alt="" class="img-fluid"></div>
+                            <div>
+                                <a href="" class="d-block small">How to add fibre to...</a>
+                                <i class="far fa-calendar me-2 "></i><small>April 15, 2022</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 col-lg-2">
+                        <h5 class="">Social Links</h5>
+                        <ul class="social-icons list-unstyled d-flex gap-3 align-items-center">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+
+
+        <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                (function () {
+                    const token = localStorage.getItem("authToken");
+                    if (!token) {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'You must be logged in to access this page.',
+                            icon: 'error',
+                            confirmButtonText: 'Login Now'
+                        }).then(() => {
+                            window.location.href = "login&signup.html"; // Redirect after alert
+                        });
+                    }
+                })();
+            });
+            function initNavbarScroll() {
+                const navbar = document.getElementById('navbar');
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY >= 50) {
+                        navbar.style.backgroundColor = "#ff9638";
+                    } else {
+                        navbar.style.backgroundColor = "transparent";
+                    }
+                });
+            }
+            initNavbarScroll();
+
+ document.addEventListener('DOMContentLoaded', () => {
+        // Helper functions to validate inputs
+        const showError = (elementId, message) => document.getElementById(elementId).textContent = message;
+        const clearError = (elementId) => document.getElementById(elementId).textContent = '';
+
+        // Extract JWT from localStorage
+        const token = localStorage.getItem('authToken');
+        let tokenData = {};
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            tokenData = payload;
+        }
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('input', function () {
+            const name = this.value;
+            if (name !== tokenData.name) {
+                showError('nameError', 'Name must match a user logged name');
+            } else {
+                clearError('nameError');
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function () {
+            const email = this.value;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                showError('emailError', 'Invalid email format. Use letters, numbers, and valid domain (e.g., example.com).');
+            }else {
+                clearError('emailError');
+            }
+        });
+
+        document.getElementById('subject').addEventListener('input', function () {
+            const subject = this.value;
+            if (subject.length < 5) {
+                showError('subjectError', 'Subject must be at least 5 characters long.');
+            } else {
+                clearError('subjectError');
+            }
+        });
+
+        document.getElementById('message').addEventListener('input', function () {
+            const message = this.value;
+            if (message.length < 10) {
+                showError('messageError', 'Message must be at least 10 characters long.');
+            } else {
+                clearError('messageError');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            const nameError = document.getElementById('nameError').textContent;
+            const emailError = document.getElementById('emailError').textContent;
+            const subjectError = document.getElementById('subjectError').textContent;
+            const messageError = document.getElementById('messageError').textContent;
+
+            if (!nameError && !emailError && !subjectError && !messageError) {
+                // Get form data
+                const feedback = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Store feedback in localStorage under the key 'feedbackKey'
+                localStorage.setItem('feedback', JSON.stringify(feedback));
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your feedback has been saved successfully",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                // Optionally, reset the form after submission
+                document.getElementById('contactForm').reset();
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Please fix the errors before submitting the form.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            }
+        });
+    });
+
+
+        </script>
+
+</body>
+
+</html>

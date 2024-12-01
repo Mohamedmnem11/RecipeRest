@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Recipe</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.png">
+  <!-- Include MDBootstrap  -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+      <!-- font Awesome -->
+      <link rel="stylesheet" href="css/all.min.css" />
+      <!-- Sweetalert2  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    body {
+      background-image: url(imgs/landingcomm.jpg);
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+    position: fixed; /* Ensure it stays fixed like SweetAlert */
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Ensure it's below SweetAlert */
+}
+
+body.swal2-shown {
+    overflow: hidden; /* Lock body scroll */
+}
+
+    /* Custom styles for the flip card */
+    .flip-card {
+      perspective: 1000px;
+      width: 380px;
+      z-index: 2;
+    }
+
+    .flip-card-inner {
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 100%;
+      height: 38em;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+    }
+
+    .flip-card-front {
+      background-color:#af692b88;
+    }
+
+    .flip-card-back {
+      background-color:#af692b88;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    button {
+      background-color: #e38531 !important;
+      outline: none ;
+    }
+    /*login form validation  */
+    .is-valid {
+  border-color: #28a745;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+/* Style the invalid feedback */
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.975em;
+  margin-top: 0.25rem;
+  display: block;
+  position: absolute; /* Positioning the error message */
+  top: 100%; /* Make it appear right below the input */
+  left: 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.form-outline i {
+  right: 10px;
+}
+
+.fa-eye-slash {
+  color: #ff9638;
+  right: 17px !important;
+
+}
+
+.fa-eye {
+  color: #ff9638;
+  right: 17px !important;
+}
+
+  </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100  text-white">
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <!-- Front: Login Form -->
+      <div class="flip-card-front card shadow-3 p-4 ">
+        <div class="logo text-center mb-2">
+          <img src="imgs/logo-white.png" alt="">
+        </div>
+        <h3 class="text-center font-weight-bold mb-4 text-white">Log in</h3>
+        <form id="login-form">
+          <div class="form-outline mb-5"  data-mdb-input-init>
+            <input type="email" id="email-login" class="form-control text-white " required />
+            <label class="form-label text-white" for="email-login">Email</label>
+            <div>
+              <small class="invalid-feedback d-none" id="email-error-message">Please enter a valid email address.</small>
+            </div>
+            <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+              id="email-valid-icon"></i>
+            <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+              id="email-invalid-icon"></i>
+            </div>
+            
+          
+            <div class="form-outline "  data-mdb-input-init>
+            <input type="password" id="password-login" class="form-control text-white " required />
+            <div>
+              <small class="invalid-feedback d-none" id="password-error-message">Password must be at least 8 characters long and include at least one letter and one number.</small>
+            </div>
+            <label class="form-label text-white" for="password-login">Password</label>
+            <i class="fa fa-eye position-absolute top-50 end-0 translate-middle-y text-white" id="toggle-password"
+              style="cursor: pointer;"></i>
+            <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+              id="password-valid-icon" style="right: 2.5rem;"></i>
+            <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+              id="password-invalid-icon" style="right: 2.5rem;"></i>
+            </div>
+          <button type="submit" class="btn btn-outline-light mt-5 w-100">Let’s Go!</button>
+        </form>
+        <p class="text-center mt-2 text-white">
+          Don't have an account? <a href="#" id="flip-to-signup" style="color: #ff9638;">Sign up</a>
+        </p>
+      </div>
+
+<!-- Back: Sign up Form -->
+<div class="flip-card-back card shadow-3 p-4 text-dark">
+  <div class="logo text-center">
+    <img src="imgs/logo-white.png" alt="">
+  </div>
+  <h3 class="text-center font-weight-bold mb-4 text-white">Sign up</h3>
+  <form id="signup-form">
+    <!-- Name Field -->
+    <div class="form-outline " data-mdb-input-init style="margin-bottom: 35px;">
+      <input type="text" id="name-signup" class="form-control text-white" required />
+      <label class="form-label text-white" for="name-signup">Name</label>
+      <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+        id="name-valid-icon"></i>
+      <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+        id="name-invalid-icon"></i>
+      <small class="invalid-feedback d-none" id="name-error-message">Name must be at least 3 characters long.</small>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-outline " data-mdb-input-init style="margin-bottom: 35px;">
+      <input type="email" id="email-signup" class="form-control text-white" required />
+      <label class="form-label text-white" for="email-signup">Email</label>
+      <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+        id="email-valid-icon-signup"></i>
+      <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+        id="email-invalid-icon-signup"></i>
+      <small class="invalid-feedback d-none" id="email-error-message-signup">Please enter a valid email address.</small>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-outline" data-mdb-input-init style="margin-bottom: 48px;">
+      <input type="password" id="password-signup" class="form-control text-white" required />
+      <label class="form-label text-white" for="password-signup">Password</label>
+      <i class="fa fa-eye position-absolute top-50 end-0 translate-middle-y text-white" id="toggle-password-signup"
+        style="cursor: pointer;"></i>
+      <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+        id="password-valid-icon-signup"></i>
+      <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+        id="password-invalid-icon-signup"></i>
+      <small class="invalid-feedback d-none" id="password-error-message-signup">Password must be at least 8 characters long,
+        with numbers and letters.</small>
+    </div>
+
+    <!-- Confirm Password Field -->
+    <div class="form-outline " data-mdb-input-init style="margin-bottom: 30px;">
+      <input type="password" id="password-signup-confirm" class="form-control text-white" required />
+      <label class="form-label text-white" for="password-signup-confirm">Confirm Password</label>
+      <i class="fa fa-eye position-absolute top-50 end-0 translate-middle-y text-white" id="toggle-password-signup-confirm"
+        style="cursor: pointer;"></i>
+      <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+        id="confirm-password-valid-icon"></i>
+      <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+        id="confirm-password-invalid-icon"></i>
+      <small class="invalid-feedback d-none" id="confirm-password-error-message">Passwords do not match.</small>
+    </div>
+
+    <!-- Phone Field -->
+    <div class="form-outline " data-mdb-input-init style="margin-bottom: 35px;">
+      <input type="text" id="phone-signup" class="form-control text-white" required />
+      <label class="form-label text-white" for="phone-signup">Phone Number</label>
+      <i class="fa fa-check-circle position-absolute top-50 end-0 translate-middle-y text-success d-none"
+        id="phone-valid-icon"></i>
+      <i class="fa fa-times-circle position-absolute top-50 end-0 translate-middle-y text-danger d-none"
+        id="phone-invalid-icon"></i>
+      <small class="invalid-feedback d-none" id="phone-error-message">Please enter a valid Egyptian phone
+        number.</small>
+    </div>
+
+    <button type="submit" class="btn btn-outline-light w-100">Sign Up!</button>
+  </form>
+  <p class="text-center mt-0 text-white">
+    Already have an account? <a href="#" id="flip-to-login" style="color: #ff9638;">Log in</a>
+  </p>
+</div>
+
+
+  <!-- Toast Notification -->
+  <!-- <div id="toast" class="toast position-fixed top-50 start-50 translate-middle m-3 text-center" role="alert" aria-live="assertive" aria-atomic="true"
+    style="display: none;">
+    <div class="toast-header">
+      <strong id="toast-title" class="me-auto"></strong>
+      <button type="button" class="btn-close" data-mdb-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div id="toast-icon" class=" mt-2"></div>
+    <div class="toast-body" id="toast-body">
+    </div>
+  </div> -->
+
+  <!-- MDBootstrap JavaScript  -->
+  <script src="js/mdb.umd.min.js"></script>
+  <!-- sweetalert2  -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/login&signup.js"></script>
+</body>
+
+</html>
